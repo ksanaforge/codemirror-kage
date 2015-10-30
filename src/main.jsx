@@ -1,29 +1,40 @@
 var React=require("react");
 var ReactDOM=require("react-dom");
-var Controls=require("./controls.jsx");
 var CodeMirror=require("ksana-codemirror").Component;
-
+var CM=require("codemirror");
 var ire=require("ksana-ire");
 var IREPreview=ire.IREPreview;
 var IREView=ire.IREView;
 var IREMARKER="⿿";
-var Maincomponent = React.createClass({
+var Maincomponent = React.createClass({ 
 	getInitialState:function() {
-		return {value:"abc\nabc⿿婆女卡哈哈⿿婆女卡哈哈\nabc⿿婆女卡哈哈⿿婆女卡哈哈\nabc",
+		return {value:"明\nabc⿿婆女卡哈哈⿿婆女美哈哈\nabc⿿婆女卡哈哈⿿婆女男哈哈\nabqc\n<xml/>qqqq<abc/>\n",
 		inIRE:false,IRELine:-1,coord:{}}
 	},
-	componentDidMount:function() {
-		this.doc=this.refs.cm.getCodeMirror().getDoc();
+	changeXML:function() {
+		for (var i=0;i<this.doc.lineCount();i++) {
+			var line=this.doc.getLine(i);
+			line.replace(/<.*?>/g,function(m,idx){
+				var element=document.createElement("SPAN");
+				element.innerHTML="<>";
+				this.doc.markText({line:i,ch:idx},{line:i,ch:idx+m.length},{replacedWith:element})		
+			}.bind(this));
+		}
+	}
+	,componentDidMount:function() {
+		this.cm=this.refs.cm.getCodeMirror();
+		this.doc=this.cm.getDoc();
+		this.cm.setCursor({ch:1,line:0});
 		this.IRE2Image(this.doc);
-		this.doc.markText({line:0,ch:0},{line:0,ch:3},{atomic:true,readOnly:true,className:"hl"})
-
+		this.cm.focus();
+		this.changeXML();
 	}	
 	,textUntilEOL : function(cm) {
 
 	}
 	,onIREViewClick:function(e){
 		var domnode=e.target;
-		while (domnode && !domnode.dataset) {
+		while (domnode && (!domnode.dataset|| !domnode.dataset.cur)) {
 			domnode=domnode.parentElement;
 		}
 		if (!domnode) return;
@@ -48,9 +59,7 @@ var Maincomponent = React.createClass({
 			var text=ire.getIRE(text);
 			var element=document.createElement("SPAN");
 			var height=doc.getEditor().defaultTextHeight()-8;
-			console.log(height)
-			//element.innerHTML="hi"
-			ReactDOM.render(<IREView height={height} cur={[i,idx]} onClick={this.onIREViewClick}/>,element);
+			ReactDOM.render(<IREView ire={text} height={height} cur={[i,idx]} onClick={this.onIREViewClick}/>,element);
 			doc.markText({line:i,ch:idx},{line:i,ch:idx+text.length+1},{replacedWith:element,clearOnEnter:true});
 		}.bind(this));
 	}

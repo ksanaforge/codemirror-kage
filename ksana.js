@@ -1,6 +1,6 @@
 jsonp_handler({
  "version": "1",
- "build": 142,
+ "build": 258,
  "title": "codemirror-kage",
  "minruntime": 1,
  "baseurl": "http://rawgit.com/ksanaforge/codemirror-kage/master/",
@@ -9,6 +9,8 @@ jsonp_handler({
   "external": [
    "react",
    "react-dom",
+   "kage",
+   "ksana-ire",
    "react-addons-update",
    "react-addons-pure-render-mixin",
    "ksana-search",
@@ -26,20 +28,20 @@ jsonp_handler({
   "ksana.js"
  ],
  "filesizes": [
-  572,
-  99,
+  681,
+  219,
   672371,
-  473668,
+  442634,
   277980,
-  812
+  840
  ],
  "filedates": [
-  "2015-10-15T08:02:46.414Z",
-  "2015-10-22T09:02:11.084Z",
+  "2015-10-30T07:01:57.305Z",
+  "2015-10-30T07:02:53.540Z",
   "2015-10-15T07:58:21.871Z",
-  "2015-10-22T09:07:41.511Z",
+  "2015-10-30T09:59:35.600Z",
   "2015-10-15T06:56:18.439Z",
-  "2015-10-22T09:05:06.962Z"
+  "2015-10-30T09:58:24.091Z"
  ],
- "date": "2015-10-22T09:07:42.449Z"
+ "date": "2015-10-30T09:59:36.536Z"
 })

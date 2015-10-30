@@ -3,3 +3,6 @@
 #main {font-size:200%;}
 .hl {color:red;}
 .ire {text-decoration: underline}
+.CodeMirror {font-size:150%;}
+.cm-invalidchar {}
+.CodeMirror-hints {font-size:300%};
