@@ -8,7 +8,7 @@ var IREView=ire.IREView;
 var IREMARKER="⿿";
 var Maincomponent = React.createClass({ 
 	getInitialState:function() {
-		return {value:"明\nabc⿿婆女卡哈哈⿿婆女美哈哈\nabc⿿婆女卡哈哈⿿婆女男哈哈\nabqc\n<xml/>qqqq<abc/>\n",
+		return {value:window.sampletext,
 		inIRE:false,IRELine:-1,coord:{}}
 	},
 	changeXML:function() {
@@ -27,7 +27,7 @@ var Maincomponent = React.createClass({
 		this.cm.setCursor({ch:1,line:0});
 		this.IRE2Image(this.doc);
 		this.cm.focus();
-		this.changeXML();
+		//this.changeXML();
 	}	
 	,textUntilEOL : function(cm) {
 
