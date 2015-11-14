@@ -59,6 +59,7 @@ var Maincomponent = React.createClass({
 			var text=ire.getIRE(text);
 			var element=document.createElement("SPAN");
 			var height=doc.getEditor().defaultTextHeight()-8;
+
 			ReactDOM.render(<IREView ire={text} height={height} cur={[i,idx]} onClick={this.onIREViewClick}/>,element);
 			doc.markText({line:i,ch:idx},{line:i,ch:idx+text.length+1},{replacedWith:element,clearOnEnter:true});
 		}.bind(this));
