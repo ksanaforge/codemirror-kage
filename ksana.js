@@ -1,6 +1,6 @@
 jsonp_handler({
  "version": "1",
- "build": 311,
+ "build": 317,
  "title": "codemirror-kage",
  "minruntime": 1,
  "baseurl": "http://rawgit.com/ksanaforge/codemirror-kage/master/",
@@ -39,9 +39,9 @@ jsonp_handler({
   "2015-11-12T07:20:48.102Z",
   "2015-11-12T07:20:48.102Z",
   "2015-11-12T07:20:48.212Z",
-  "2015-12-11T08:31:53.438Z",
+  "2016-03-25T01:56:12.042Z",
   "2015-11-12T07:20:48.118Z",
-  "2015-12-11T05:08:14.422Z"
+  "2016-03-25T01:55:34.016Z"
  ],
- "date": "2015-12-11T08:31:54.421Z"
+ "date": "2016-03-25T01:56:13.015Z"
 })
