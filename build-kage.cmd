@@ -1,1 +1,1 @@
-browserify --bare -u react -r kage -r ksana-ire > kage-bundle.js
+browserify --bare -u react-native -u react -r kage -r ksana-ire > kage-bundle.js
