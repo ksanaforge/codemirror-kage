@@ -1,4 +1,4 @@
-var fs=require('fs');
+/*var fs=require('fs');
 var sep=require('path').sep;
 var file=process.cwd()+sep+'bundle.js';
 
@@ -17,7 +17,8 @@ var reload=function(){
   win.reload();
 }
 
-// nodemain.js // this java script must be load by inject-script-start in package.json*/
+// nodemain.js // this java script must be load by inject-script-start in package.json
+
 if (typeof process !="undefined") {			// checking if node.js is running
 	nodeRequire=require;			// browser side package will overwrite require
 	if (process.versions["node-webkit"]) {	// checking if nw is running
@@ -30,3 +31,5 @@ if (typeof process !="undefined") {			// checking if node.js is running
 		
 	}
 }
+
+*/

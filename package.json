@@ -11,6 +11,8 @@
     "height": 700
   },
   "scripts" : {
+    "start": "watchify index.js -o bundle.js -dv -p livereactload -u react-native -x react -x react-dom  -x kage -x ksana-ire",
+    "build": "browserify index.js -g [envify --NODE_ENV 'production'] -t [ babelify --presets es2015 ] -x kage -x ksana-ire -x react -x react-dom | uglifyjs > bundle.js"
   },
   "dependencies": {
     "ksana-codemirror": "git+https://github.com/ksanaforge/ksana-codemirror.git",
