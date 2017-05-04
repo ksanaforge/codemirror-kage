@@ -60,7 +60,6 @@ var Maincomponent = React.createClass({
 			var text=ire.getIRE(text);
 			var element=document.createElement("SPAN");
 			var height=doc.getEditor().defaultTextHeight()-8;
-
 			const ireview=E(IREView,
 			 {ire:text, height:height, cur:[i,idx] 
 			 	,onClick:this.onIREViewClick});
