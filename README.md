@@ -1,11 +1,11 @@
 # codemirror-kage
 codemirror with kage dynamic glyph
 
-    cd /ksana2016
+    cd ksana2016
     git clone https://github.com/ksanaforge/codemirror-kage.git
     cd codemirror-kage
     npm i
-    ./build-kage
+    build-kage.cmd
     open nginx and listen to 2561
     
     npm start
